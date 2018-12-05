@@ -1,0 +1,54 @@
+<view class="page__bd">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+    <view wx:if="{{inputVal.length == 0}}" class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    <view wx:if="{{inputVal.length > 0}}" class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hidefind">搜索</view>
+  </view>
+</view>
+
+<view class="title">
+  <view id="nearGroup">我的故事</view>
+  <image src='../../../images/add.png' id='addBtn' bindtap='addStory'></image>
+</view>
+
+<view wx:for="{{storys}}" class="flex-wrap1" wx:key="1">
+
+  <view class="weui-panel flex-wrap2">
+    <image src="{{item.image}}" id="picture" mode="aspectFill"></image>
+    <view class="weui-media-box weui-media-box_text xx">
+      <view class="weui-media-box__title weui-media-box__title_in-text" bindtap='showStory' data-id='{{item.id}}'>
+        <text class='nameStory'>{{item.storyName}}</text>
+        <text class="state" wx:if="{{item.state==0}}">草稿</text>
+        <text class="state" wx:if="{{item.state==1}}">审核中</text>
+        <text class="state" wx:if="{{item.state==2}}">审核成功</text>
+        <text class="state" wx:if="{{item.state==3}}">审核失败</text>
+      </view>
+      <view class="weui-media-box__desc">
+        <button hidden='{{item.type}}' size='mini' bindtap='editStory' data-id='{{item.id}}' type='primary' class='editBtn'>编辑</button>
+        <button size='mini' bindtap='delStory' data-id='{{item.id}}' type='warn' class='delBtn'>删除</button>
+        <button wx:if="{{item.state==0}}" size='mini' bindtap='submitCheck' data-id='{{item.id}}' type='warn' class='delBtn'>提交审核</button>
+      </view>
+      <view class="weui-media-box__info">
+        <view class="weui-media-box__info__meta writer">作者:{{item.writerName}}</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
+          {{item.time}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<button class="load_more" loading='true' wx:if="{{loadflag}}">拼命加载中...</button>

@@ -1,0 +1,156 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="h1 center">{{name}}</view>
+      <view class="weui-article__section">
+        <view class='row'>
+          <view class="page__desc1 center">价格：{{price}} </view>
+          <view class="page__desc2 center">品牌：{{brand}}</view>
+        </view>
+        <view class='row'>
+          <view class="page__desc1 center">手机：{{phone}} </view>
+          <view class="page__desc2 center">时间：{{time}}</view>
+        </view>
+      </view>
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          {{introduce}}
+        </view>
+        <view class="image">
+          <block wx:for="{{images}}">
+            <image src='{{item}}' data-url='{{item}}' bindtap='previewImage' mode='widthFix'></image>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <form bindsubmit='formSubmit'>
+    <view class="weui-cells__title">评论</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea maxlength="100" bindinput="change" class="weui-textarea" placeholder="请输入您的评论" style="height: 2rem" name="Content" value='{{areaValue}}' hidden='{{textarea}}'/>
+          <view class="weui-textarea-counter">{{num}}/100</view>
+        </view>
+      </view>
+    </view>
+    <view class='commentBtn'>
+      <button class='weui-btn' type='primary' form-type="submit">评论</button>
+    </view>
+  </form>
+  <modal hidden="{{hiddenmodalput}}" title="请输入回复内容" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <input type='text' placeholder="请输入内容" bindinput='replyInput' value='{{replyValue}}'/>
+  </modal>
+
+  <view class="detail-post-comment">
+    <view class="detail-post-comment-title">评论</view>
+    <view class="detail-post-comment-list">
+      <block wx:for="{{ comments }}">
+        <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
+          <view class="detail-post-comment-avatar">
+            <image class="detail-post-comment-avatar-img" mode="scaleToFill" src="{{item.HeadImgUrl}}"></image>
+          </view>
+          <view class="detail-post-comment-cell">
+            <view class="detail-post-comment-info">
+              <view class="detail-post-comment-info-cell">
+                <view class="detail-post-comment-author-name">{{item.name}}</view>
+                <view class="detail-post-comment-time">{{index + 1}}楼 发表于{{item.created_at}}</view>
+              </view>
+              <view class="detail-post-comment-info-cell" style="text-align:right">
+                <button size='mini' bindtap='reply' data-id='{{item.id}}'>回复</button>
+              </view>
+            </view>
+            <view class="detail-comment-content">
+              <text class="detail-comment-text">{{ item.content }}</text>
+            </view>
+
+            <!-- 回复 -->
+
+            <block wx:for="{{ item[0] }}">
+              <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
+                <view class="detail-post-comment-avatar">
+                  <image class="detail-post-comment-avatar-img" mode="scaleToFill" src="{{item.HeadImgUrl}}"></image>
+                </view>
+                <view class="detail-post-comment-cell">
+                  <view class="detail-post-comment-info">
+                    <view class="detail-post-comment-info-cell">
+                      <view class="detail-post-comment-author-name">{{item.name}} </view>
+                      <view class="detail-post-comment-time">{{index + 1}}楼 发表于{{item.created_at}}</view>
+                    </view>
+                    <view class="detail-post-comment-info-cell" style="text-align:right" id="{{item.id}}" data-index="{{index}}" catchtap="reply">
+                      <!-- <image class="detail-post-zan" mode="scaleToFill" src="/images/icon/zan.png"></image> -->
+                      <!-- <text class="detail-post-zan-num" wx:if="{{item.zanNum > 0}}">{{item.zanNum}}</text> -->
+                    </view>
+                  </view>
+                  <view class="detail-comment-content">
+                    <text class="detail-comment-text">{{ item.content }}</text>
+                  </view>
+                </view>
+              </view>
+
+            </block>
+
+            <!-- 回复 -->
+
+          </view>
+        </view>
+      </block>
+
+      <block>
+        <view class="detail-post-comment-null" hidden='{{haveConment}}'>
+          <image class="imgnull" mode="scaleToFill" src="/images/icon/null.png"></image>
+          <text class="textnull">暂无收录评论 </text>
+        </view>
+      </block>
+
+    </view>
+  </view>
+</view>
+
+
+<!-- 
+<view>
+  <view id='title'>{{name}}</view>
+  <view id='info'>
+    价格：{{price}} 时间：{{time}}
+  </view>
+  <view id='phone'>联系方式：{{phone}} 品牌：{{brand}}</view>
+  <view id='content'>{{introduce}}</view>
+  <view id='images'>
+    <block wx:for="{{images}}">
+      <image src='{{item}}' data-url='{{item}}' bindtap='previewImage'></image>
+    </block>
+  </view>
+
+  <form bindsubmit='formSubmit'>
+    <view class="weui-cells__title">文章内容</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea maxlength="100" bindinput="change" class="weui-textarea" placeholder="一百字以内" style="height: 2rem" name="Content" />
+        <view class="weui-textarea-counter">{{num}}/100</view>
+      </view>
+    </view>
+  </view>
+  <button size='mini' form-type="submit" >评论</button>
+  <block wx:for="{{comments}}">
+    <view class='comment'>  
+      <view><image src='{{item.HeadImgUrl}}'></image>{{item.name}} 评论于：  {{item.created_at}}
+        <button size='mini' bindtap='reply' data-id='{{item.id}}'>回复</button>
+      </view>
+      <view class='content'>{{item.content}}
+      </view>
+    </view>
+    <block wx:for="{{item[0]}}">
+        <view class='reply'>
+          <view><image src='{{item.HeadImgUrl}}'></image>{{item.name}}  回复于：{{item.created_at}}</view>
+          <view class='content'>{{item.content}}</view>
+        </view>
+    </block>
+  </block>
+  </form>
+  <modal hidden="{{hiddenmodalput}}" title="请输入回复内容" confirm-text="提交" cancel-text="重置" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text'placeholder="请输入内容" auto-focus bindinput='replyInput'/>  
+</modal> 
+</view> -->

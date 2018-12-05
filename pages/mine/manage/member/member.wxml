@@ -1,0 +1,32 @@
+<!--member.wxml-->
+<view class="content">
+
+  <view class="item-box">
+  <view class="items">
+    <view wx:for="{{list}}" wx:key="{{index}}"class="item">
+
+      <view wx:if="{{!flagg}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.style}}" class="inner txt" id="s1"id="{{index*2}}" bindtap="showm" >
+      <image class="item-icon" mode="widthFix" src="{{list[index].HeadImgUrl}}"></image>{{item.NickName}}        </view>
+
+      <view wx:if="{{flagg}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}"  class="inner txt" id="s1"id="{{index*2}}"  bindtap="showm1" style="{{item.style}}">
+      <image class="item-icon" mode="widthFix" src="{{list[index].HeadImgUrl}}"></image>{{item.NickName}}        </view>
+      <view data-index="{{index}}" bindtap = "del"  id="{{index*2+1}}" class="inner del">删除</view>
+    </view>
+  </view>
+</view>
+
+  <view class="all" hidden="{{flag}}" bindtap="close">
+    <view class="info">
+      <view class="title">详细信息</view>
+       <view class="main">姓名：{{Name}}</view>
+       <view class="main">性别：{{Sex}}</view>
+      <view class="main">年龄：{{Age}}</view>
+       <view class="main" wx:if="{{MonthDis!=0}}">月跑量：{{MonthDis}}公里</view>
+      <view class="main">手机号：{{Tel}}</view>
+      <view class="main">所在城市：{{city}}</view>  
+      <view class="main">具体住址：{{Address}}</view>  
+      
+   
+    </view>
+  </view>
+</view>

@@ -1,0 +1,137 @@
+/* member.wxss */
+.content{
+  width:100%;
+  height: 100%;
+  flex-direction: column;
+  padding-top: 20rpx;
+}
+page{
+  background-color: #f8f8f8;
+}
+.body{
+  width: 710rpx;
+  height: 80rpx;
+  display: flex;
+  margin: 0rpx auto; 
+  background-color: #fff;
+  /* border-radius: 0 40rpx 40rpx 0;   */
+  border-bottom: 2rpx solid #ccc;
+
+  padding: 20rpx;
+}
+.show{
+  height: 100rxp;
+  font-size: 80rpx;
+  line-height: 100rpx;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  color: gray;
+}
+.titleBody{
+  height: 60rpx;
+  font-size: 40rpx;
+  color: gray;
+  line-height: 40rpx;
+  text-indent: 20rpx;
+}
+
+.headpic{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 40rpx;  
+}
+.memberInfo{
+  width: 310rpx;
+  height: 80rpx;
+  padding-left: 20rpx;
+  font-size: 0.7rem;
+  line-height: 80rpx;
+}
+
+.all{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.70);
+}
+.info{
+  background-color: #fff;
+  margin: 250rpx auto;
+  width: 588rpx;
+  height: 560rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  position: relative;
+}
+.title{
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  font-weight: normal;
+  border-bottom: 2rpx solid #ccc;
+}
+.main{
+  color: #666;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  border: 1rpx solid #e5e5e5;
+  border-left:none;
+  border-right: none; 
+  overflow:hidden;
+text-overflow:ellipsis;
+display:-webkit-box;
+-webkit-box-orient:vertical;
+-webkit-line-clamp:1;
+
+}
+.btn{
+  background-color: #fff;
+  width: 120rpx;
+  height: 80rpx;
+  font-size: 35rpx;
+  line-height: 80rpx;
+  padding: 0;
+  text-align: center;
+}
+.btn-accept{
+
+  border-radius: 10rpx 10rpx 10rpx 10rpx; 
+  margin-right: 20rpx;
+}
+.btn-refuse{
+  border-radius: 10rpx 10rpx 10rpx 10rpx; 
+  
+}
+.btn-info{
+  border-radius: 0 10rpx 10rpx 0; 
+  
+}
+.close{
+  background-color: #fff;
+  font-size: 35rpx;
+  line-height: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  bottom: 0;
+  width: 260rpx;
+  left: 0;
+margin-left:120rpx; 
+margin-bottom: 10rpx;
+}
+.ccc{
+
+  margin-top: 12rpx;
+  line-height:60rpx;
+  font-size:30rpx;
+  height: 60rpx;
+}
+.memberInfo{
+  width: 400rpx;
+  overflow: hidden;
+}

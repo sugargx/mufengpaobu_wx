@@ -1,0 +1,60 @@
+/* pages/mine/wallet/record/record.wxss */
+
+.tip {
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 34rpx;
+  color: #48c23d;
+}
+
+.one_record {
+  height: 130rpx;
+  background-color: white;
+  line-height: 130rpx;
+}
+
+.logo {
+  border-radius: 50%;
+  height: 100rpx;
+  width: 100rpx;
+  display: inline-block;
+  /* margin-top: 40rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx; */
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  float: left;
+}
+
+.logo image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.title {
+  width: 240rpx;
+  font-size: 26rpx;
+  display: inline-block;
+  float: left;
+}
+.title text{
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis; 
+  display: block;
+}
+.date {
+  font-size: 26rpx;
+  color: #ccc;
+  display: inline-block;
+  float: left;
+  margin-left: 20rpx;
+}
+
+.money {
+  font-size: 40rpx;
+  display: inline-block;
+  float: right;
+  margin-right: 20rpx;
+}

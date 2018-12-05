@@ -1,0 +1,22 @@
+ <blocks wx:for="{{dat.data[1]}}">
+  <!-- <view class="flex-wrap3" bindtap="detialFlagTap" > -->
+    <view class="flex-wrap3"  data-index="{{item.UserMainID}}">
+          <view id="img"><image src="{{item.HeadImgUrl}}"></image></view>  
+          <view style='overflow: hidden; white-space: nowrap;  text-overflow: ellipsis;'  id="name">{{item.NickName}}</view>  
+           <view id="long">
+           <view class="l1"> {{item.TotalDis}}</view>
+            <view class="l2"> 公里</view>
+           </view>
+           <view id="time">
+           <view class="tt1">
+            <view class="l11"wx:if="{{item.Hour}}">  {{item.Hour}}</view>
+            <view class="l2" wx:if="{{item.Hour}}">时</view></view>
+           <view class="tt2" wx:if="{{item.Minute}}"> <view class="l11"> {{item.Minute}}</view>
+            <view class="l22" wx:if="{{item.Minute}}"> 分</view>
+            </view>
+      </view>
+           
+          
+ </view> 
+  <view class="int1"></view>
+ </blocks>

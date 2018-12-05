@@ -1,0 +1,21 @@
+<view wx:for="{{dat}}"    class="flex-wrap1">
+  <view class="weui-panel flex-wrap2 ">
+    <button wx:if="{{item.manage}}" bindtap="recordTap" data-index="{{dat[index].Id}}" class="quit">管理</button>
+    
+    <view wx:if="{{item.Apply}}" class="weui-badge1"></view>
+    <view wx:if="{{item.checking}}"  class="point">建团审核中...</view>
+    <view wx:if="{{item.joining}}"  class="point">入团待审核...</view>
+    <view  bindtap="wrapTap" data-index="{{dat[index].Id}}" >
+      <image  src="{{item.ImgUrl}}" id="picture" mode="aspectFill"  ></image>
+      <view class="weui-media-box weui-media-box_text xx">
+          <view class="weui-media-box__title weui-media-box__title_in-text">{{item.GroupName}}</view>
+          <view class="weui-media-box__desc">{{item.Introduce}}</view>  
+      </view>
+       <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">月跑量：{{item.TotalDistance}}公里</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">成员：{{item.PeopleCount}}人</view>
+          </view>   
+    </view>
+  </view>
+</view> 
+  <button wx:if="{{showCreate}}" class="change1" type="primary"   bindtap="createGroup">创建跑团</button>

@@ -1,0 +1,61 @@
+<!--uploading.wxml-->
+<!-- <view class="showpage" wx:if="{{uploadFlag}}"> -->
+  <view class="head"></view>
+<form bindsubmit="formSubmit">
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >跑步时间</view>
+    </view>
+     <view class="aaa weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+ 
+          <view class="weui-cell__bd">
+            <picker  mode="multiSelector"bindchange="bindPickerChange" value="{{index1}}" range="{{array}}">
+              <view class="weui-input">{{array[0][index1[0]]}}               {{array[1][index1[1]]}}   {{array[2][index1[2]]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view> 
+
+  </view> 
+    
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >跑步里程</view>
+    </view>
+    <view class="">
+      <input value="{{speed}}" maxlength="7" style="width: 150rpx;margin-left:35rpx;" class="weui-input"  type="digit" name="distance" class="long" bindblur="judge_long" />
+    </view>
+    <view  class="weui-label1" style="width:150rpx;margin-left:-30rpx;">公里</view>
+  </view> 
+</view>
+<view class="weui-cells__title">上传可证跑步数据真伪的图片(该图片将被公开)</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <view class="pc pc2" wx:if="{{flag}}">
+          <image mode="aspectFit" src="{{ImagUrl}}" bindtap="previewImage"></image>
+        </view>
+        <view class="pc pc1" bindtap="chooseImage"></view> 
+      </view>
+    </view>
+  </view>
+<view wx:if="{{AddGroupFlag}}" class="weui-cells__title">打卡信息同步至跑团:</view>
+  <view wx:if="{{AddGroupFlag}}" class="weui-cells weui-cells_after-title">
+    <checkbox-group bindchange="checkboxChange">
+    <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+        <checkbox  value="{{item.name}}" checked="true"/>
+        <view class="weui-cell__bd">{{item.value}}</view>
+      </label>
+    </checkbox-group>
+</view>
+<view class="weui-cells__title" wx:if="{{!AddGroupFlag}}">加入跑团,可参与团内排名！</view>
+  <button type="primary"  form-type="submit">提   交</button>
+</form>
+
+<!-- </view> -->
+<!-- <view wx:if="{{!uploadFlag}}">
+ <view  class="pic"><icon class="icon-box-img" type="warn" size="93" color="#C9C9C9"></icon></view>
+ <view class="disupload">今日已打卡，请明日再来吧!</view>
+</view> -->

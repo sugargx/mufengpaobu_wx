@@ -1,0 +1,76 @@
+{
+  "pages": [ 
+    "pages/index/index",
+    "pages/index/runRun/creatGroup/creatGroup",
+    "pages/index/runRun/runGroup/runGroup",
+    "pages/index/runRun/runGroup1/runGroup1",
+    "pages/index/runRun/teamIntroduce/teamIntroduce",
+    "pages/index/runRun/teamIntroduce/rankList/rankList",
+    "pages/index/runRun/teamIntroduce/analysis/analysis",
+    "pages/mine/manage/manage",
+    "pages/mine/manage/ad/ad",
+    "pages/mine/manage/check/check",
+    "pages/index/runRun/teamIntroduce/advertising/advertising",
+    "pages/mine/manage/info/info",
+    "pages/mine/manage/member/member",
+    "pages/uploading/uploading",
+    "pages/uploading/upSuccess/upSuccess",
+    "pages/find/find",
+    "pages/mine/mine",
+    "pages/mine/record/record",
+    "pages/mine/userinfo/userinfo",
+    "pages/mine/analysis1/analysis1",
+    "pages/mine/teamManage/teamManage",
+    "pages/mine/wallet/wallet",
+    "pages/mine/wallet/record/record",
+
+    "pages/story/story",
+    "pages/story/createStory/createStory",
+    "pages/story/storyDisplay/storyDisplay",
+    "pages/mine/manage/storyCheck/storyCheck",
+
+    "pages/equipment/equipment",
+    "pages/equipment/createEquipment/createEquipment",
+    "pages/equipment/equipmentDisplay/equipmentDisplay",
+    "pages/mine/manage/equipmentCheck/equipmentCheck",
+    "pages/mine/myStory/myStory",
+    "pages/mine/myStory/myStoryEdit/myStoryEdit",
+    "pages/mine/myEquipment/myEquipmentEdit/myEquipmentEdit",
+    "pages/mine/myEquipment/myEquipment"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#48C23D",
+    "navigationBarTextStyle": "#fff",
+    "navigationBarTitleText": "沐风跑步",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "debug": true,
+  "tabBar": {
+    "selectedColor": "#48C23D",
+    "backgroundColor": "#FEFEFE",
+    "color": "#8a8a8a",
+ 
+    "list": [
+      {
+        "text": "主页",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/main1.png",
+        "selectedIconPath": "images/main2.png"
+      },
+      {
+        "text": "打卡",
+        "pagePath": "pages/uploading/uploading",
+        "iconPath": "images/card1.png",
+        "selectedIconPath": "images/card2.png"
+      },
+
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/My1.png",
+        "selectedIconPath": "images/My2.png"
+      }
+    ]
+  }
+}

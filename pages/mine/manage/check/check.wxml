@@ -1,0 +1,30 @@
+<!--member.wxml-->
+<view class="content">
+  <view class="titleBody" wx:if="{{!none}}">审核列表</view>
+  <view class="show" wx:if="{{none}}">暂无申请</view>
+  <block wx:for="{{member}}">
+  <view class="body" >
+    <image src="{{member[index].HeadImgUrl}}" class="headpic" ></image>
+    <view class="memberInfo"  id="{{index}}">{{item.NickName}}</view>
+
+        <button  id="{{index*3}}" bindtap="accept" class="mini-btn ccc" type="primary" > 同意</button>
+        <button class="mini-btn ccc"  id="{{index*3+2}}" bindtap="showm" type="default" >详情</button>
+        <button id="{{index*3+1}}" bindtap="refuse" class="mini-btn ccc" type="warn"> 拒绝</button>
+  </view>
+  </block>
+  <view class="all" bindtap="close" wx:if="{{!flag}}">
+    <view class="info">
+      <view class="title">个人信息</view>
+       <view class="main">姓名：{{Name}}</view>
+       <view class="main">性别：{{Sex}}</view>
+      <view class="main">年龄：{{Age}}</view>
+      <view class="main">手机号：{{Tel}}</view>
+      <view class="main">所在城市：{{city}}</view>  
+
+      <view class="main">具体住址：{{Address}}</view> 
+  
+
+    </view>
+    
+  </view>
+</view>

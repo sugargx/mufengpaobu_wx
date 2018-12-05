@@ -1,0 +1,38 @@
+/**app.wxss**/
+@import 'weui.wxss';
+ Page{
+  font-family: "微软雅黑";
+  background-color: #F8F8F8; 
+  word-break:break-all; 
+} 
+
+.page__hd {
+    padding-left: 40rpx;
+    padding-top: 40rpx;
+}
+
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page__ft{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.page__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: left;
+    font-size: 14px;
+} 
+.center{
+  text-align: center;
+}

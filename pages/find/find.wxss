@@ -1,0 +1,13 @@
+/* find.wxss */
+.find{
+  text-align: center;
+  font-size: 50rpx;
+  margin-top: 100rpx;
+}
+.pic{
+ text-align: center;
+ padding-top: 200rpx;
+}
+Page{
+  background-color: #F8F8F8;
+}

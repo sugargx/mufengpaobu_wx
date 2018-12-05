@@ -1,0 +1,67 @@
+<!--pages/uploading/upSuccess/upSuccess.wxml-->
+
+<view  class="image">
+  <image mode="aspectFill"bindtap="previewImage"  src="{{url}}"></image>
+  <view class="QRcode">
+   <image id="QRImg" mode="aspectFill" src="{{AdvQRUrl}}"></image> 
+    <view class="advname">{{AdvTitle}}</view> 
+  </view>
+  </view>
+ 
+
+<view class="text-box">
+    <view class="h1">里程：
+      <view class="p">{{long}}</view>
+      <view class="p-small">公里</view>
+    </view>
+    <!-- wx:if="{{hour!=null&&hour!=0}}"
+    wx:if="{{seconde!=null&&seconde!=0}}" -->
+    <!-- {{hour}}{{minute}}{{seconde}} -->
+    <view class="h1" >用时：
+      <view class="p"wx:if="{{hour!=null&&hour!=0}}" >{{hour}}</view>
+      <view class="p-small" wx:if="{{hour!=null&&hour!=0}}">时</view>
+      <view class="p" wx:if="{{minute!=null&&minute!=0}}">{{minute}}</view>
+      <view class="p-small" wx:if="{{minute!=null&&minute!=0}}">分</view>
+      <view class="p"  wx:if="{{second!=null&&second!=0}}">{{second}}</view>
+      <view class="p-small" wx:if="{{second!=null&&second!=0}}">秒</view>
+    </view>
+    <view class="h1">获得：
+      <view class="p">{{point}}</view>
+      <view class="p-small">积分</view>
+    </view>
+</view>  <view class='name1'>{{NickName}}</view>
+<view class="text-box">
+      <view class="h1"><text class="import"></text>共跑步：
+      <view class="p">{{TotalRun}}</view>
+      <view class="p-small">公里</view>
+    </view>
+      <view class="h1">共打卡：
+      <view class="p">{{TimeAll}}</view>
+      <view class="p-small">次</view>
+    </view>  
+    <view class="h1">共获得：
+      <view class="p">{{TotalPoints}}</view>
+      <view class="p-small">积分</view>
+    </view>
+</view>
+
+  <view class="text-box2">
+    <!-- <view wx:if="{{flag}}">
+  <view class="text" wx:if="{{ThisRank>LastRank}}">您在[{{group}}]累计打卡[{{TimeInGroup}}]次，团内总跑量排名为[{{ThisRank}}]，较上次排名下降了[{{ThisRank-LastRank}}]个名次，继续加油！</view>
+    <view class="text" wx:elif="{{LastRank==ThisRank}}">您在[{{group}}]累计打卡[{{TimeInGroup}}]次，团内总跑量排名为[{{ThisRank}}]，较上次排名名次持平，继续加油！</view>
+  <view class="text" wx:else>您在[{{group}}]累计打卡[{{TimeInGroup}}]次，团内总跑量排名为[{{ThisRank}}]，较上次排名上升了[{{LastRank-ThisRank}}]个名次，继续加油！</view>
+  </view> -->
+  <view wx:if="{{flag}}" class="juzhong">
+  同步至跑团，即可参与团内排名！
+  </view>
+    <view wx:if="{{!flag}}" class="text">
+{{d}}
+  </view>
+  </view>
+<!-- wx:if="{{flag}}" -->
+ 
+<view class="bottom">
+<button open-type="share" id="share"  type="primary">马上分享</button>
+<button bindtap="but" class="upLoad"  type="primary">个人中心</button>
+ <view class="footer">--萌芽科技技术支持--</view>
+</view>

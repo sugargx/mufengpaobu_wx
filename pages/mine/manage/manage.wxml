@@ -1,0 +1,32 @@
+<!--manage.wxml-->
+<view class="context">
+  <button bindtap="toInfo" id="top">编辑团信息</button>
+  <view class="weui-cell__ft weui-cell__ft_in-access right1"></view>
+  <view class="xian"></view>
+  <button bindtap="toMember" id="change">管理团成员</button>
+  <view class="weui-cell__ft weui-cell__ft_in-access right2"></view>
+  <button bindtap="toApply" id="top">入团申请
+    <view class="rp" wx:if="{{newApply}}">{{num}}</view>
+  </button>
+  <view wx:if="{{!newApply}}" class="weui-cell__ft weui-cell__ft_in-access right3"></view>
+  <view class="xian"></view>
+
+  <button bindtap="toStory" id="change">故事审核
+    <view class="rp" wx:if="{{storyNum}}">{{storyNum}}</view>
+  </button>
+  <view wx:if="{{!storyNum}}" class="weui-cell__ft weui-cell__ft_in-access right4"></view>
+  <view class="xian"></view>
+
+  <!-- <button bindtap="toEquipment" id="change">装备审核
+    <view class="rp" wx:if="{{equipmentNum}}">{{equipmentNum}}</view>
+  </button> -->
+  <view wx:if="{{!equipmentNum}}" class="weui-cell__ft weui-cell__ft_in-access right5"></view>
+  <view class="xian"></view>
+  <button bindtap="backgroundTap" id="change">电脑端登录信息</button>
+  <view class="weui-cell__ft weui-cell__ft_in-access right5"></view>
+
+  <!-- <button bindtap="toAd" id="change">编辑广告位</button><view class="weui-cell__ft weui-cell__ft_in-access right4"></view> -->
+
+  <!-- <button bindtap="dissolve" class="bottom">解散跑团</button> -->
+
+</view>

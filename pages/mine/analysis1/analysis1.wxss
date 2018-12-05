@@ -1,0 +1,72 @@
+Page {
+  background-color: #fff;
+}
+
+.graphCanvas {
+  width: 750rpx;
+  height: 400px;
+  margin-top: 30rpx;
+}
+
+.sentence {
+  color: skyblue;
+  text-align: center;
+  padding: 30rpx 0rpx 50rpx 0rpx;
+  background-color:#fff;
+  font-size: 40rpx;
+}
+
+.sentence1 {
+  float: left;
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.flex2 {
+  flex: 3;
+}
+
+.flex1 {
+  display: -webkit-flex;
+  flex: 1;
+  padding: 30rpx 0 45rpx 20rpx;
+  background-color:#fff;
+  border-top:1rpx solid #e5e5e5;
+
+}
+
+image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.up {
+  position: absolute;
+  left: 150rpx;
+  top: 280rpx;
+}
+
+.down {
+  position: absolute;
+  right: 150rpx;
+  top: 280rpx;
+}
+
+.mounthTime {
+  font-size: 30rpx;
+  color: #090909;
+  text-align: center;
+}
+
+.t1 {
+  height: 550rpx;
+  
+}
+.jieshao{
+position: absolute;
+top: 794rpx;
+left: 225rpx;
+color: skyblue;
+font-size: 36rpx;
+
+}

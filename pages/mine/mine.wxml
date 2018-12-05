@@ -1,0 +1,76 @@
+<!--my.wxml-->
+<view class="content">
+  <button type="primary" wx:if="{{!hasUserInfo}}" style="width:400rpx;height:80rpx;margin:50rpx auto;" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <view wx:if="{{hasUserInfo}}" class="main body">
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <view class="wxid">{{userInfo.nickName}}</view>
+    <view class="point">
+      积分：{{Point}}(可兑换商品)
+    </view>
+  </view>
+
+  <view class="head body weui-cell__bd ss" bindtap="info" id="xia">
+    <image class="ic" src="/images/userinfo.png" id="myxinxi"></image>
+    <view class="s1" id="wanshan">个人信息</view>
+    <view class=" weui-cell__ft weui-cell__ft_in-access  right1">
+      <view hidden="{{flag}}">(请完善个人信息)</view>
+    </view>
+  </view>
+  <view class="xian"></view>
+  <!-- <view class="head body ss"  id="dd"  wx:if="{{statu2}}">
+    <image class="ic" src="/images/teammy.png"></image> <view class="s1">我的跑团</view> <view class="right1"  id="shenhe">建团审核中…</view>
+  </view>
+  <view class="head body ss"  bindtap="wrapTap"  id="dd"  wx:elif="{{statu3}}">
+    <image class="ic" src="/images/teammy.png"></image> <view class="s1">我的跑团</view> <view class="right1"  id="shenhe">团长审核中…</view>
+  </view> -->
+  <view class="head body ss" bindtap="wrapTap" id="dd">
+    <image class="ic" src="/images/teammy.png"></image>
+    <view class="s1">我的跑团</view>
+    <view class="cc" wx:if="{{newsFlag}}"></view>
+    <view wx:if="{{newsFlag}}" class="right1"></view>
+    <view wx:if="{{!newsFlag}}" class="weui-cell__ft weui-cell__ft_in-access right1"></view>
+  </view>
+  <view class="head body ss" bindtap="storyTap" id="dd">
+    <image class="ic" src="/images/story-blue.png"></image>
+    <view class="s1">我的故事</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access right1"></view>
+  </view>
+  <view class="head body ss" bindtap="equipmentTap" id="dd">
+    <image class="ic" src="/images/equipment.png"></image>
+    <view class="s1">我的装备</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access right1"></view>
+  </view>
+  <view class="xian"></view>
+  <!-- <view class="head body ss" bindtap="saoTap" id="dd">
+    <image class="ic" src="/images/equipment.png"></image>
+    <view class="s1">扫一扫</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access right1"></view>
+  </view> -->
+  <!-- <view class="body ss" bindtap="manageTap" id="dd" wx:if="{{status}}">
+    <image class="ic" id="paotuanguanli"  src="/images/manget.png"></image> <view class="s1">跑团管理</view> <view class="cc" wx:if="{{newApply}}"></view><view  wx:if="{{newApply}}" class="right1"></view><view  wx:if="{{!newApply}}" class="weui-cell__ft weui-cell__ft_in-access right1"></view> 
+
+  </view> -->
+  <view class="xian" wx:if="{{status}}"></view>
+  <view class="head body ss" bindtap="wrapTap1" id="shang1">
+    <image class="ic" src="/images/record.png"></image>
+    <view class="s1">跑步记录</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access  right1"></view>
+  </view>
+</view>
+
+<view class="body ss" bindtap="MyWallet" id="xia1" wx:if="{{status}}">
+  <image class="ic" id="qianbao" src="/images/myw.png"></image>
+  <view class="s1">钱包</view>
+  <view class="weui-cell__ft weui-cell__ft_in-access  right1"></view>
+</view>
+<view class="body ss" bindtap="MyWallet" id="xia2" wx:if="{{!status}}">
+  <image class="ic" id="qianbao" src="/images/myw.png"></image>
+  <view class="s1">钱包</view>
+  <view class="weui-cell__ft weui-cell__ft_in-access  right1"></view>
+</view>
+<view class="xian" wx:if="{{status}}"></view>
+<view class="body ss" bindtap="GroupWallet" id="shang1" wx:if="{{status}}">
+  <image class="ic" id="tuanqianbao" src="/images/ourw.png"></image>
+  <view class="s1">团钱包</view>
+  <view class="weui-cell__ft weui-cell__ft_in-access  right1"></view>
+</view>

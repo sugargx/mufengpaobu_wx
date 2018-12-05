@@ -1,0 +1,83 @@
+<!--userinfo.wxml-->
+<view class="head">
+个人信息
+</view>
+<form bindsubmit="formSubmit"> 
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd xx">
+    <image class="tupian" src="../../../images/name.png"></image>
+        <view class="weui-label name">姓名</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入姓名" value="{{Name}}" name="Name"/>
+      </view>
+    </view>   
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd xx">
+       <image class="tupian" src="../../../images/age.png"></image>
+        <view class="weui-label name" >年龄</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input  type="number" class="weui-input" placeholder="请输入年龄" maxlength="3" name="Age" value="{{Age}}"/>
+      </view>
+    </view> 
+    <view class="weui-cell weui-cell_input">
+         <view class="weui-cell__hd xx">
+       <image class="tupian" src="../../../images/sex.png"></image>
+        <view class="weui-label name" >性别</view>
+      </view>
+      <view class="weui-cell__bd">
+      <radio-group name="Sex" class="h">
+        <radio id="man" value="男" checked="{{Sex=='男'}}"/>
+        <label for="man"> 男</label>
+        <radio id="woman" value="女" checked="{{Sex=='女'}}" style="margin-left:60rpx"/>
+        <label for="woman"> 女</label>
+      </radio-group> 
+      </view>
+    </view> 
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd xx">
+       <image class="tupian" src="../../../images/phone.png"></image>
+        <view class="weui-label name" >手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入11位手机号" type="number" maxlength="11" name="Tel" value="{{Tel}}" />
+      </view>
+    </view>    
+<view class="weui-cell weui-cell_input">
+       <view class="weui-cell__hd xx">
+       <image class="tupian" src="../../../images/speed.png"></image>
+        <view class="weui-label name" >最佳配速</view>
+      </view>
+      <view class="weui-cell__bd speed">
+        <!-- <input class="weui-input" placeholder="分钟/公里" type="number" maxlength="11" name="Speed" value="{{Speed}}" /> -->
+      <input  style="text-align:center" class="weui-input" maxlength="2" cursor="1" value="{{minute}}" name="minute" type="number" style="width:70rpx;text-align:center;"/>
+      <view class="unit">分</view>
+      <input class="weui-input" maxlength="2" cursor="1" value="{{seconde}}" name="seconde" type="number" style="width:70rpx;text-align:center;"/>
+      <view class="unit">秒/公里</view>
+      </view>
+    </view> 
+    <view class="weui-cell weui-cell_input">
+       <view class="weui-cell__hd xx">
+       <image class="tupian" src="../../../images/address.png"></image>
+        <view class="weui-label name" >地址</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker name="region" mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <view class="text">{{region[0]}},{{region[1]}},{{region[2]}}</view>  
+        </picker>
+      </view>
+    </view> 
+    <view class="weui-cell weui-cell_input">
+       <view class="weui-cell__hd xx">
+       <image class="tupian" src="../../../images/address1.png"></image>
+        <view class="weui-label name" >详细住址</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="text" value="{{DetailedAddr}}" name="DetailedAddr" placeholder="请输入详细地址"/>
+      </view>
+    </view> 
+  </view>
+  <button class="weui-btn" type="primary" form-type="submit">{{operate}}</button>
+</form>

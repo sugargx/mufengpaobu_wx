@@ -1,0 +1,100 @@
+<view class="fu">
+<!-- <view id="change"  wx:if="{{changeNum!=1}}">切换</view> -->
+  <view class="flex-wrap6" wx:if="{{advFlag}}" bindtap="closeTap">
+      <view class="flex-wrap4" wx:if="{{advFlag}}" hover-stop-propagation="true">  
+             <view id="advTitle">{{dat.data[2].AdvTitle}}
+            </view>
+            <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" id='iswiper2'>
+              <block wx:for="{{1}}">
+                <swiper-item>
+                  <image  mode="aspectFill" src="{{dat.data[2].AdvImgUrl}}" class="slide-image"  id="iswiper1"/>
+                </swiper-item>
+              </block>
+            </swiper>
+          <view class="int4"></view>
+            <view id="advContent">{{dat.data[2].Content}}</view>
+            <view id="advQrurl"><image src="{{dat.data[2].AdvQRUrl}}"></image></view>     
+      </view>  
+ </view>
+<blocks class="flex-wrap5">
+<swiper class="iswiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+  >
+  <block>
+    
+    <swiper-item>
+      <image src="{{dat.data['0']['0'].ImgUrl}}" mode="aspectFill" class="slide-image"  class="iswiper"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="{{dat.data[2].AdvImgUrl}}" mode="aspectFill"   bindtap="itemTap0" class="slide-image"  class="iswiper"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<button  open-type="share" id="share"  type="primary">分享</button>
+<button  class="upLoad" wx:if="{{thisExamine}}"  type="primary">待审</button>
+<button bindtap="upLoadTap" class="upLoad" wx:elif="{{upLoad}}"  type="primary">打卡</button>
+
+<form bindsubmit="joinTap" report-submit="true">
+  <!--这里是一些 <input>-->
+   <button  class="upLoad" wx:if="{{GroupStatenow==2}}" type="warn">该跑团已冻结</button>
+  <button formType="submit" class="upLoad" wx:elif="{{(!upLoad)&&(!thisExamine)}}"  type="primary">加入</button>
+</form>
+
+<view class="int2"></view>
+<view class="flex-wrap2">
+<view id="title">{{dat.data["0"]["0"].GroupName}}</view>
+<view wx:if="{{dat.data[0][0].TotalDistance<10000}}" id="introduce1">跑团人数：{{dat.data["0"]["0"].PeopleCount}} | 跑步里程：{{dat.data["0"]["0"].TotalDistance}}公里</view> 
+<view wx:elif="{{dat.data[0][0].TotalDistance<100000000}}" id="introduce1">跑团人数：{{dat.data["0"]["0"].PeopleCount}} | 跑步里程：{{RunWan}}万公里</view>  
+<view wx:else id="introduce1">跑团人数：{{dat.data["0"]["0"].PeopleCount}} | 跑步里程：{{RunYi}}亿公里</view>    
+</view> <view class="int2"></view>
+<view class="int33">跑团介绍</view>
+ <view id="introduce2">{{dat.data["0"]["0"].Introduce}}</view>
+ <view class="int3"><view class="mmp">今日打卡列表</view>  <view class="int22"></view>
+<button class="ichange" bindtap="analysisTap">统计</button>
+<button wx:if="{{dat.data[1].length>1}}"  class="ichange" bindtap="rankList">排名</button>
+<!-- <button class="ichange" bindtap="">退出</button> -->
+</view>
+        <view wx:if="{{dat.data[1].length==0}}" class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无今日数据</view>
+        </view>
+ <blocks wx:for="{{dat.data[1]}}">
+  <!-- <view class="flex-wrap3" bindtap="detialFlagTap" > -->
+    <view class="flex-wrap3"  data-index="{{item.UserMainID}}" data-userName="{{item.NickName}}" bindtap="userTap">
+          <view id="img"><image src="{{item.HeadImgUrl}}"></image></view>  
+          <view style='overflow: hidden; white-space: nowrap;  text-overflow: ellipsis;'  id="name">{{item.NickName}}</view>  
+           <view id="long">
+           <view class="l1"> {{item.TotalDis}}</view>
+            <view class="l2"> 公里</view>
+           </view>
+           <view id="time">
+           <view class="tt1">
+            <view class="l11"wx:if="{{item.Hour}}">  {{item.Hour}}</view>
+            <view class="l2" wx:if="{{item.Hour}}">时</view></view>
+           <view class="tt2" wx:if="{{item.Minute}}"> <view class="l11"> {{item.Minute}}</view>
+            <view class="l22" wx:if="{{item.Minute}}"> 分</view>
+            </view>
+      </view>
+           
+          
+ </view> 
+  <view class="int1"></view>
+ </blocks>
+
+
+</blocks>
+
+<view class="detial" wx:if="{{detialFlag}}">
+   <swiper class="sss" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{runUrl}}">
+    <swiper-item>
+      <image src="{{item.ImgUrl}}" mode="aspectFill"  class="swiper-item"/>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+
+<view class="detial1" bindtap="detialFlagTap1" wx:if="{{detialFlag}}"></view>
+<button wx:if="{{oprator}}"  bindtap="actionSheetTap" class="quit">操作</button>
+ <button wx:if="{{GroupStatenow==2&&Statusnow}}"  bindtap="dismiss" class="quit">操作</button> 
+</view>

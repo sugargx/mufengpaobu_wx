@@ -1,0 +1,151 @@
+
+<import src="../../../wxParse/wxParse.wxml"/> 
+
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="h1 center">{{storyName}}</view>
+            <view class="weui-article__section"> 
+                <view class='row'> 
+                  <view class="page__desc1 center">作者:{{writerName}}</view>
+                  <view class="page__desc2 center">时间：{{created_at}}</view>
+                  <view class="page__desc3 center">浏览量：{{pageview}}</view>
+                </view>
+            </view>
+            <view class="weui-article__section">
+                <view hidden='{{dispalyWay}}' class="weui-article__p">
+                    {{content}}
+                </view>
+                <view class="wxParse" hidden='{{!dispalyWay}}'>
+                    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+                </view>
+
+                <view class="image">
+                    <block wx:for="{{images}}">
+                      <image src='{{item}}' data-url='{{item}}' bindtap='previewImage' mode='widthFix'
+></image>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+     <view class='zanAndDaShang'>
+      <view class='zan' wx:if="{{zanNums>0}}">
+        <block wx:for="{{zanNames}}">
+          <text>{{item}}、</text>
+        </block>
+        <text wx:if="{{zanNums>=10}}"><text>{{zanNums}}</text>人</text>
+        <text wx:if="{{zanNums>0}}">赞了这篇文章</text>
+      </view>
+      <view class='dashang' wx:if="{{rewardNum>0}}">
+        <view>
+          <text><text class='red'>{{rewardNum}}</text>人打赏</text>
+        </view>
+       <view class='touxiangRow'>
+         <block wx:for="{{daShangNames}}">
+          <view class='imageView'>
+            <image src='{{item}}'></image>
+          </view>
+        </block>
+       </view>
+      </view>
+    </view> 
+    <!-- 赞赏 -->
+    <view class='row'>
+      <view id="reward" class='row' bindtap='zanTap'>
+        <image id='zan' src='../../../images/zan.png'></image>
+        <view>{{zanNum}}</view>
+      </view>
+      <button class='weui-btn' plain="true" type='primary' bindtap='daShang' class='daShangBtn'>打赏</button>
+    </view>
+        
+        <modal hidden="{{hiddenShang}}" title="请输入打赏金额" confirm-text="打赏" cancel-text="取消" bindcancel="shangCancle" bindconfirm="shangConfirm">
+        <block wx:for="{{array}}">
+          <button class='moneyBtn-item' type='primary' size='mini' data-money='{{item}}' bindtap='changeMoney'>{{item}}</button>
+        </block>
+        <view class='row'>
+         <label for='moneyBtn' class='moneyBtn label'>打赏金额：</label>
+         <input id='moneyBtn' class="moneyBtn" type='text' bindinput="inputMoney" placeholder="请输入打赏金额" value='{{money}}'/>
+        </view>
+        </modal>
+        <form bindsubmit='formSubmit'>
+          <view class="weui-cells__title">评论</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">
+                <textarea hidden='{{!textarea}}' maxlength="100" bindinput="change" class="weui-textarea" placeholder="请输入您的评论" style="height: 2rem" name="Content" value='{{clear}}'/>
+                <view class="weui-textarea-counter">{{num}}/100</view>
+              </view>
+            </view>
+          </view>
+          <view class='commentBtn'>
+            <button class='weui-btn mybtn' type='primary' form-type="submit">评论</button>
+          </view>
+        </form>
+        <modal hidden="{{hiddenmodalput}}" title="请输入回复内容" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+          <input type='text' placeholder="请输入内容" bindinput='replyInput' value='{{clear}}'/>
+        </modal>
+    <!-- 赞赏 -->
+    <view class="detail-post-comment">
+    <view class="detail-post-comment-title">评论</view>
+    <view class="detail-post-comment-list">
+      <block wx:for="{{ comments }}">
+        <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
+          <view class="detail-post-comment-avatar">
+            <image class="detail-post-comment-avatar-img" mode="scaleToFill" src="{{item.HeadImgUrl}}"></image>
+          </view>
+          <view class="detail-post-comment-cell">
+            <view class="detail-post-comment-info">
+              <view class="detail-post-comment-info-cell">
+                <view class="detail-post-comment-author-name">{{item.name}}</view>
+                <view class="detail-post-comment-time">{{index + 1}}楼 发表于{{item.created_at}}</view>
+              </view>
+              <view class="detail-post-comment-info-cell" style="text-align:right">
+                <button size='mini' bindtap='reply' data-id='{{item.id}}'>回复</button>
+              </view>
+            </view>
+            <view class="detail-comment-content">
+              <text class="detail-comment-text">{{ item.content }}</text>
+            </view>
+            
+            <!-- 回复 -->
+
+            <block wx:for="{{ item[0] }}">
+              <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
+                <view class="detail-post-comment-avatar">
+                  <image class="detail-post-comment-avatar-img" mode="scaleToFill" src="{{item.HeadImgUrl}}"></image>
+                </view>
+                <view class="detail-post-comment-cell">
+                  <view class="detail-post-comment-info">
+                    <view class="detail-post-comment-info-cell">
+                      <view class="detail-post-comment-author-name">{{item.name}} </view>
+                      <view class="detail-post-comment-time">{{index + 1}}楼 发表于{{item.created_at}}</view>
+                    </view>
+                    <view class="detail-post-comment-info-cell" style="text-align:right" id="{{item.id}}" data-index="{{index}}" catchtap="reply">
+                      <!-- <image class="detail-post-zan" mode="scaleToFill" src="/images/icon/zan.png"></image> -->
+                      <!-- <text class="detail-post-zan-num" wx:if="{{item.zanNum > 0}}">{{item.zanNum}}</text> -->
+                    </view>
+                  </view>
+                  <view class="detail-comment-content">
+                    <text class="detail-comment-text">{{ item.content }}</text>
+                  </view>
+                </view>
+              </view>
+              
+            </block>
+
+            <!-- 回复 -->
+
+          </view>
+        </view>
+      </block>
+
+      <block>
+        <view class="detail-post-comment-null" hidden='{{haveConment}}'>
+          <!-- <image class="imgnull" mode="scaleToFill" src="/images/icon/null.png"></image> -->
+          <text class="textnull">暂无收录评论 </text>
+        </view>
+      </block>
+    </view>
+    </view>
+</view>

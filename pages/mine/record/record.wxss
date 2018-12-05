@@ -1,0 +1,111 @@
+
+.nearGroup{
+  height: 70rpx;
+  line-height: 70rpx;
+  /* width: 600rpx; */
+margin-left: 34rpx;
+color: #48C23D;
+}
+.ss{
+  width: 720rpx;
+  display: -webkit-flex;
+  letter-spacing: 2rpx;
+
+}
+.body{
+ 
+  height: 94rpx;
+  font-size: 28rpx;
+  line-height:94rpx;
+  background-color: #fff;
+   border-top: 1rpx solid #e5e5e5;
+  display: flex;
+  padding-left: 30rpx;
+}
+.quit{
+  height: 50rpx;
+ line-height: 50rpx;
+
+color: #48C23D;
+font-size: 30rpx;
+position: absolute;
+right: 10rpx;
+top:10rpx;
+
+}
+#dd{
+  border: none;
+  margin-top: 0rpx;
+  margin-bottom: 0rpx;
+}
+#myxinxi{
+   width: 48rpx;
+  height: 50rpx;
+  margin: 22rpx 24rpx 0rpx 0rpx;
+
+}
+.ic{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 28rpx 10rpx  0;
+  flex: 14;
+}
+.s1{
+  flex: 100;
+}
+.s2{
+  flex: 80;
+}
+.s3{
+  flex: 90;
+}
+.item{
+    position: relative;
+  
+    height: 100rpx;
+    line-height: 100rpx;
+    overflow: hidden;
+
+}
+
+.inner{
+    position: absolute;
+    top:0;
+}
+.inner.txt{
+    background-color: #fff;
+    width: 100%;
+    z-index: 5;
+    height: 100rpx;
+    border-top:1rpx solid #e5e5e5;
+   
+    transition: left 0.2s ease-in-out;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+       font-size: 28rpx;
+    line-height: 109rpx;
+}
+.inner.del{
+    background-color: #e64340;
+    width: 180rpx;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 34rpx;
+    z-index: 4;
+    right: 0;
+    color: #fff
+}
+.item-icon{
+    width: 45rpx;
+    height: 45rpx;
+    vertical-align: middle;
+    margin-right: 16rpx;
+    margin-left: 20rpx;
+    margin-top: -6rpx;
+}
+.icon1{
+  margin-left: 30rpx;
+}

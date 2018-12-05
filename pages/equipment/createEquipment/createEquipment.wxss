@@ -1,0 +1,38 @@
+.head{
+  padding: 30rpx;
+  text-align: center;
+  color: skyblue;
+  font-size: 40rpx;
+}
+.pc{
+  width:720rpx;
+}
+.image{
+  width:200rpx;
+  height: 150rpx;
+  margin:3rpx;
+  float: left;
+}
+
+.row{
+  width: 750rpx;
+  position: relative;
+  overflow: hidden;
+}
+#choose{
+  width:154rpx;
+  height: 154rpx;
+  border:1px solid #D9D9D9;
+}
+button{
+  width: 90%;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+/*防止页面左右移动  */
+form{
+  display: block;
+  /* max-width: 720rpx; */
+  overflow: hidden;
+  margin: 0 auto;
+}

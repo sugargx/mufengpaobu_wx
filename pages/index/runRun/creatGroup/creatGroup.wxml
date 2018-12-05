@@ -1,0 +1,56 @@
+<!--userinfo.wxml-->
+<view class="head">创建跑团</view>
+<form report-submit="true" bindsubmit="formSubmit"> 
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >跑团名称</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input bindblur='checkName' name="GroupName" class="weui-input" placeholder="例如：沐风跑团" maxlength="20"  type="text"/>
+      
+    </view>
+    <text class="warning" wx:if="{{NameExist}}">已存在</text>
+  </view> 
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >现有人数</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name="PeopleCount" class="weui-input" placeholder="请输入线下人数" maxlength="10"  type="number" />
+    </view>
+    
+  </view> 
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >月总跑量</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name="TotalDistance" class="weui-input" placeholder="请输入线下总跑量" maxlength="10"  type="number" />
+    </view>
+    
+  </view>
+</view>
+<view class="weui-cells__title">跑团介绍</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea maxlength="200" value="{{Content}}" bindinput="change" class="weui-textarea" placeholder="至少30字,前35字将会显示在跑团列表" style="height: 3.3em" name="Introduce" />
+        <view class="weui-textarea-counter">{{num}}/200</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">跑团图片(最优长宽比5:2)</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <view class="pc pc2" wx:if="{{flag}}">
+          <image mode="aspectFit" src="{{ImgUrl}}" bindtap="previewImage"></image>
+        </view>
+        <view class="pc pc1" bindtap="chooseImage"></view> 
+      </view>
+    </view>
+  </view>
+
+<button type="primary" form-type="submit" > 创建跑团 </button>
+</form>

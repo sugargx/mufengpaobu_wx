@@ -1,0 +1,125 @@
+/* pages/mine/teamManage/teamManage.wxss */
+/* .flex-wrap{
+display: -webkit-flex;
+margin-bottom: 20rpx;
+margin-top: 14rpx;
+height: 50rpx; 
+} */
+/* .flex-wrap view{
+  margin: 10rpx;
+  font-family:"微软雅黑"; 
+} */
+.title{
+  display: flex;
+  flex-direction:row;
+  height: 70rpx;
+  background-color: #fff; 
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+}
+.weui-media-box__title{
+  width: 40%;
+}
+.weui-media-box__desc{
+word-break:break-all;
+}
+#nearGroup{
+flex: 26;
+font-size: 30rpx;
+margin-left: 20rpx;
+/* line-height: 100%; */
+line-height: 70rpx;
+}
+.change1{
+  width: 500rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left:125rpx;
+  margin-top: 20rpx; 
+}
+#change{
+  flex: 40;
+  height: 40rpx;
+  text-align: right;
+  color:#ccc;
+  font-size: 30rpx;
+}
+button[size="mini"] {
+display:inline-block;
+line-height:2.3;
+font-size:12px;
+padding:0 0.5em;
+
+
+}
+#picture{
+float: left;
+height: 168rpx;
+margin-left:15rpx;
+margin-top:38rpx; 
+padding-right: 10rpx;
+width: 217.3rpx;
+z-index: 1000;
+}
+.change{
+  margin-top: 10rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+
+.load_more{
+   background-color: #fff;
+  /* position: static; */
+  font: 12rpx;
+  color: #666; 
+}
+/* 去掉button边框*/
+.load_more::after{
+    border:none;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.quit{
+  height: 50rpx;
+ line-height: 50rpx;
+z-index: 99;
+color: #48C23D;
+font-size: 30rpx;
+position: absolute;
+right: 37rpx;
+top:29rpx;
+}
+.point{
+  height: 50rpx;
+ line-height: 50rpx;
+z-index: 99;
+color: #999;
+font-size: 30rpx;
+position: absolute;
+right: 37rpx;
+top:29rpx;
+}
+.weui-badge1{
+z-index: 100;
+position: absolute;
+top: 21rpx;
+right: 32rpx;
+color: red;
+background-color: #e64340;
+width: 20rpx;
+height: 20rpx;
+border-radius: 400rpx;
+}
+.weui-media-box__info{
+  margin-top:5px!important;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+}

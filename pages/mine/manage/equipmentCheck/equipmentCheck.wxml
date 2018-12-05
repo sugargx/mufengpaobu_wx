@@ -1,0 +1,18 @@
+<!--member.wxml-->
+<view class="content">
+  <view class="titleBody" wx:if="{{none}}">审核列表</view>
+  <view class="show" wx:if="{{!none}}">暂无申请</view>
+  <block wx:for="{{equipmentList}}">
+  <view class="body" >
+    <view class="memberInfo" data-id='{{item.id}}'  id="{{index}}" bindtap='showStory'>{{item.name}}  {{item.price}}</view>
+    <form bindsubmit='accept' report-submit='true' data-id='{{item.id}}' data-openid='{{item.UserMainID}}'>
+        <button id="{{index*3}}" class="mini-btn ccc btn-accept" type="primary" form-type='submit'>同意</button>
+    </form>
+
+    <form bindsubmit='refuse' report-submit='true' data-id='{{item.id}}' data-openid='{{item.UserMainID}}'>
+      <button id="{{index*3+1}}" data-id='{{item.id}}' class="mini-btn ccc btn-refuse" type="warn" form-type='submit'>拒绝</button>
+    </form>
+        
+    </view>
+  </block>
+</view>

@@ -1,0 +1,81 @@
+<!--userinfo.wxml-->
+<view class="head">卖出我的装备</view>
+
+ 
+<form report-submit="true" bindsubmit="formSubmit"> 
+
+<view class="weui-cells weui-cells_after-title">
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >装备名称</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name="EquipmentName" class="weui-input" maxlength="20" placeholder='例如：跑步鞋' type="text"/>
+    </view>
+  </view> 
+
+<view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >品牌型号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name="EquipmentBrand" class="weui-input" maxlength="20" placeholder='例如：耐克' type="text"/>
+    </view>
+  </view> 
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >售价</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name="EquipmentPrice" class="weui-input" maxlength="20" placeholder='例如：100.00' type="text"/>
+    </view>
+  </view> 
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >联系方式</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input name="Phone" class="weui-input" maxlength="20" placeholder='例如：178XXXXXXXX' type="text"/>
+    </view>
+  </view> 
+
+</view>
+
+<view class="weui-cells__title">装备介绍</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea maxlength="100" value="{{Content}}" bindinput="change" class="weui-textarea" placeholder="主要介绍购买时间、购买价格、成色等。" style="height: 10rem" name="EquipmentIntroduce" />
+        <view class="weui-textarea-counter">{{num}}/1000</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">装备图片（1-5张）</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+      <view class="pc row">
+        <block wx:for="{{images}}">
+            <image src="{{item.ImgUrl}}" bindtap="delImage" data-url='{{item.ImgUrl}}' class='image'></image>
+        </block>
+        <image src="../../../images/plus.png" bindtap="chooseImage" id='choose'></image>
+      </view>
+      </view>
+    </view>
+  </view>
+
+<!-- <view wx:if="{{AddGroupFlag}}" class="weui-cells__title">请选择装备审核的跑团:</view>
+  <view wx:if="{{AddGroupFlag}}" class="weui-cells weui-cells_after-title">
+    <radio-group bindchange="checkboxChange" name="group">
+    <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+        <radio  value="{{item.Id}}"/>
+        <view class="weui-cell__bd">{{item.GroupName}}</view>
+      </label>
+    </radio-group>
+</view> -->
+
+<button type="primary" form-type="submit" > 发布 </button>
+</form>

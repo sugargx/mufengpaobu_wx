@@ -1,0 +1,32 @@
+
+<view class="nearGroup">{{NickName}}的跑步记录</view>
+<button wx:if="{{bigflag}}" bindtap="recordTap"class="quit">统计</button>
+  <!-- <view class="head body weui-cell__bd ss" bindtap="warp" id="xia" wx:for="{{dat.data}}" data-index="{{dat.data[index].Id}}">
+    <image class="ic" src="/images/timee.png" id="myxinxi"></image>
+    <view class="s1" id="wanshan">{{item.Date}}</view>
+ <view class="s2" id="wanshan">里程：{{item.Distance}}公里</view>
+  </view> -->
+    <view   wx:if="{{bigflag}}"wx:for="{{list}}" wx:key="{{index}}"class="item" data-index="{{list[index].Id}}">
+
+      <view  wx:if="{{!flagg}}" bindtouchstart="touchS" bindtouchmove="touchM"  bindtouchend="touchE" id="{{list[index].Id*2}}"data-index="{{index}}" style="{{item.style}}" class="inner txt" bindtap="warp" >
+ <image class="item-icon" mode="widthFix" src="/images/timee.png"></image>
+    {{item.Date}}　　　　　里程：{{item.Distance}}公里  
+        </view>
+            <view  wx:if="{{flagg}}" bindtouchstart="touchS" bindtouchmove="touchM"  bindtouchend="touchE" id="{{list[index].Id*2}}"data-index="{{index}}" style="{{item.style}}" class="inner txt" bindtap="warp1" >
+ <image class="item-icon" mode="widthFix" src="/images/timee.png"></image>
+    {{item.Date}}　　　　　里程：{{item.Distance}}公里  
+        </view>
+      <view data-index="{{index}}" bindtap = "del"  id="{{index*2+1}}" class="inner del">删除</view>
+    </view>
+
+     <view   wx:if="{{!bigflag}}"wx:for="{{list}}" wx:key="{{index}}"class="item" data-index="{{list[index].Id}}">
+
+      <view   id="{{list[index].Id*2}}"data-index="{{index}}" style="{{item.style}}" class="inner txt" bindtap="warp" >
+ <image class="item-icon" mode="widthFix" src="/images/timee.png"></image>
+    {{item.Date}}　　　　　里程：{{item.Distance}}公里  
+        </view>
+        
+    </view>
+    
+    
+  

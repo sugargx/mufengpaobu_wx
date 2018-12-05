@@ -1,0 +1,39 @@
+
+      <!-- <view class="flex-wrap4">  
+             <view id="advTitle">{{dat.data[0].AdvTitle}}
+            </view>
+            <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" id='iswiper2'>
+              <block wx:for="{{1}}">
+                <swiper-item>
+                  <image  mode="aspectFill" src="{{dat.data[0].AdvImgUrl}}" class="slide-image"  id="iswiper1"/>
+                </swiper-item>
+              </block>
+            </swiper>
+          <view class="int4"></view>
+            <view id="advContent">{{dat.data[0].Content}}</view>
+            <view id="advQrurl"><image src="{{dat.data[0].AdvQRUrl}}"></image></view>     
+      </view>   -->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view id="advTitle" class="weui-article__h1">{{dat.data[0].AdvTitle}}</view>
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" id='iswiper2'>
+                          <block wx:for="{{1}}">
+                            <swiper-item>
+                              <image  mode="aspectFill" src="{{dat.data[0].AdvImgUrl}}" class="slide-image"  id="iswiper1"/>
+                            </swiper-item>
+                          </block>
+                        </swiper>
+                    </view>
+                    <view id="advContent" class="weui-article__p">{{dat.data[0].Content}}</view>
+                    <view id="advQrurl" class="weui-article__p">
+                        <image src="{{dat.data[0].AdvQRUrl}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

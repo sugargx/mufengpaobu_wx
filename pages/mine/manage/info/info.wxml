@@ -1,0 +1,40 @@
+<!--info.wxml-->
+<view class="head">
+跑团信息
+</view>
+<form bindsubmit="submit">
+<view class="weui-cells weui-cells_after-title">
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >跑团名称</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input type="text" disabled='true' class="weui-input" placeholder="请输入跑团名称" maxlength="10" name="Name" value="{{Name}}"/>
+    </view>
+  </view> 
+</view>
+  <view class="weui-cells__title">跑团介绍</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea maxlength="200" value="{{Content}}" bindinput="change" class="weui-textarea" placeholder="前三十五个字将会显示在跑团列表" style="height: 3.3em" name="Content" />
+        <view class="weui-textarea-counter">{{num}}/200</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">跑团图片</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <view class="pc pc2" >
+          <image  mode="aspectFit"  src="{{ImagUrl}}" bindtap="previewImage"></image>
+        </view>
+        <view class="pc pc1" bindtap="chooseImage"></view> 
+      </view>
+    </view>
+  </view>
+
+  
+  <button type="primary" form-type="submit">提 交</button>
+</form>

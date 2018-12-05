@@ -1,0 +1,31 @@
+.head{
+  padding: 30rpx;
+  text-align: center;
+  color: skyblue;
+  font-size: 40rpx;
+}
+.pc{
+  width:720rpx;
+}
+.image{
+  width:200rpx;
+  height: 150rpx;
+  margin:3rpx;
+  float: left;
+}
+
+.row{
+  width: 720rpx;
+  position: relative;
+  overflow: hidden;
+}
+#choose{
+  width:154rpx;
+  height: 154rpx;
+  border:1px solid #D9D9D9;
+}
+.updatedBtn{
+  width: 90%;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}

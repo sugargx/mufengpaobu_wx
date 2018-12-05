@@ -1,0 +1,46 @@
+/* userinfo.wxss */
+.weui-label{
+  width: 180rpx;
+}
+.text{
+  overflow: hidden;
+  max-width: 510rpx;  
+  text-overflow:ellipsis;
+  white-space:nowrap;  
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.h{
+  height: 88rpx;
+  display: flex;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.head{
+  padding: 30rpx;
+  text-align: center;
+  color: skyblue;
+  font-size: 40rpx;
+}
+button{
+  margin: 30rpx;
+  position: absolute;
+  bottom:30rpx;
+  width: 690rpx;
+}
+.xx{
+  display: -webkit-flex;
+  padding-top: 10rpx;
+}
+.name{
+
+padding-bottom: 20rpx;
+flex: 3;
+}
+.tupian{
+  width: 18rpx;
+ height: 50rpx;
+
+padding-right: 10rpx;
+flex: 1
+}

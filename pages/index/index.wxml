@@ -1,0 +1,95 @@
+
+
+<view class="top">
+  <view class="choose" id="team"> 
+    <image src="../../images/team.png" bindtap="teamTap" ></image>
+    <view class="wenzi">跑团</view>
+  </view>
+  <view class="choose type" id="story">
+    <image src="../../images/story-blue.png" bindtap="storyTap"></image>
+    <view class="wenzi">故事</view>
+  </view>
+  <view class="choose" id="equipment">
+    <image src="../../images/equipment.png" bindtap="equipmentTap"></image>
+    <view class="wenzi">二手</view>
+  </view>
+  <view class="choose" id="Endorsement">
+    <image src="../../images/Endorsement.png" bindtap="contact"></image>
+    <view class="wenzi">联系</view>
+  </view>
+ </view>
+<view class="c2"></view>
+
+
+<view class="content">
+<view class="v1"></view>
+<view class="v2">沐浴阳光 迎风奔跑</view>
+<view class="v3"></view>
+<view class="v4">运动·让生命更美丽</view>
+<view class="v5"></view>
+<view class="v6">
+<view class="v71"></view>
+<view class="v72">今日沐风大数据</view>
+<view class="v73"></view>
+<view class="v74">
+<view class="v741">
+<view class="qq"><image src="../../images/totalrun.png"></image></view>
+
+
+</view>
+<view class="v742">
+<view class="v7421">平台总跑量</view>
+<view wx:if="{{totalRun<10000}}" class="v7422">{{totalRun}}<view class="kill">公里</view></view>
+<view wx:elif="{{totalRun<100000000}}" class="v7422">{{RunWan}}<view class="kill">万公里</view></view>
+<view wx:else class="v7422">{{RunYi}}<view class="kill">亿公里</view></view>
+</view>
+</view>
+<view class="v75"></view>
+<view class="v76"></view>
+<view class="v77">
+<view class="v741">
+<view class="qq" id="dd"><image id="cc" src="../../images/totalpeople.png"></image></view>
+</view>
+<view class="v742">
+<view class="v7421">平台总人数</view>
+<view class="v7422">
+{{totalPeople}}<view class="kill">人</view>
+</view>
+</view>
+</view>
+<view class="v78"></view>
+<view class="v79"></view>
+<view class="v74" wx:if="{{flag1}}">
+  <view class="v741">
+    <view class="qq" id="ee"><image src="../../images/runindex.png"></image></view>
+  </view>
+  <view class="v742">
+    <view class="v7421">我的记录</view>
+    <view class="v7422">
+      <text class="important">{{myci}}</text>
+      <view class="kill">次</view>
+      <text wx:if="{{myRun<10000}}" class="important">{{myRun}}</text>
+      <text wx:else class="important">{{myRunWan}}</text>
+      <view  wx:if="{{myRun<10000}}" class="kill">公里</view>
+      <view   wx:else class="kill">万公里</view>
+      <view  class="ding"></view>
+    </view>
+  </view>
+</view>
+<view class="v7a" wx:if="{{!flag1}}">
+  <view class="v7a1">
+  <button type="primary" bindtap="joinTap">加入跑团</button>
+  </view>
+  <view class="v7a2">
+  <button type="primary" bindtap="creatTap">创建跑团</button>
+  </view>
+</view>
+
+<view class="v7b" wx:if="{{flag1}}"></view>
+</view>
+
+<view class="v7">
+</view>
+</view>
+
+

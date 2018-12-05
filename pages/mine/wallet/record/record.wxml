@@ -1,0 +1,17 @@
+<!--pages/mine/wallet/record/record.wxml-->
+<view class='container'>
+  <view class='tip'>
+    <text>交易记录</text>
+  </view>
+  <block wx:for="{{recordArr}}">
+    <view class="one_record">
+    <view class='logo'>
+      <image src='../../../../images/shang.png'>
+      </image>
+    </view>
+    <view class='title'><text>{{item.itemdescribe}}</text></view>
+    <view class='date'>{{item.itemtime}}</view>
+    <view class='money'>{{item.itemmoney}}</view>
+  </view>
+  </block>
+</view>

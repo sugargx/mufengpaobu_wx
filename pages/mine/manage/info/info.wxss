@@ -1,0 +1,63 @@
+page{
+    background-color: #F8F8F8;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+
+}
+.head{
+  padding: 30rpx;
+  text-align: center;
+  color: skyblue;
+  font-size: 40rpx;
+}
+/*图片开始*/
+.weui-cell__bd{
+  display: flex;
+}
+.weui-label{
+  width: 180rpx;
+}
+
+.pc{
+  width:154rpx;
+  height: 154rpx;
+}
+.pc1{
+  position:relative;
+  border:1px solid #D9D9D9;
+
+}
+.pc1::after{
+  width: 79rpx;
+  height: 4rpx;
+}
+.pc1::before,.pc1::after{
+  content:" ";
+  position:absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform:translate(-50%, -50%);
+  transform:translate(-50%, -50%);
+  background-color:#D9D9D9;
+
+}
+.pc1::before{
+  width: 2rpx;
+  height: 79rpx;
+}
+.pc2{
+  margin-right: 18rpx;
+}
+image{
+  width:100%;
+  height: 100%;
+}
+button{
+  margin: 30rpx;
+  position: absolute;
+  bottom:30rpx;
+  width: 690rpx;
+}
+.weui-textarea-counter{
+  word-break:normal;
+}

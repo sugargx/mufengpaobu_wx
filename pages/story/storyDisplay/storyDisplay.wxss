@@ -1,0 +1,227 @@
+@import"../../../wxParse/wxParse.wxss";
+page{
+  background-color: #FFFFFF;
+}
+image{
+  margin: 4px auto;
+}
+view{
+  overflow: visible;
+}
+
+
+.detail-post-comment{
+  overflow: hidden;
+  border-top: 20rpx solid #eee;
+}
+
+.detail-post-comment-item{
+  display: flex;
+}
+.detail-post-comment-title{
+  position: relative;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  border-bottom: 1px #eee solid;
+}
+
+.detail-post-comment-avatar-img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.detail-post-comment-cell{
+  overflow: hidden;
+  flex: 1;
+  margin-left: 20rpx;
+}
+.detail-post-comment {
+  background-color: #fff;
+}
+.detail-post-comment-item {
+  padding: 30rpx 0;
+  margin: 0 30rpx;
+  background: #fff;
+  border-bottom: 1px #eee solid;
+}
+
+.detail-post-comment-info{
+  display: flex;
+}
+.detail-post-comment-info-cell{
+  width: 700rpx;
+}
+.detail-post-zan{
+  width: 33rpx;
+  height: 33rpx;
+  display: inline-block;
+}
+.detail-post-zan-num{
+  display: inline-block;
+  margin-left: 10rpx;
+  color: #888;
+}
+.detail-post-comment-author-name{
+  font-size: 20rpx;
+}
+.detail-post-comment-time{
+  width: 400rpx;
+  font-size: 23rpx;
+  color: #666;
+}
+
+.detail-comment-text {
+  overflow: hidden;
+  display: block;
+  margin: 20rpx 0;
+  font-size: 28rpx;
+  word-wrap: break-word;
+}
+
+
+.detail-post-comment-null{
+  margin: 50rpx auto;
+  text-align: center;
+}
+.detail-post-comment-null .imgnull{
+  margin: 5rpx auto;
+  width: 200rpx;
+  height: 200rpx;
+}
+.detail-post-comment-null .textnull{
+  display: block;
+  color: #80bd01;
+}
+#reward{
+  line-height: 80rpx;
+  width: 40%;
+  height: 80rpx;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #1AAD19;
+  border-radius: 15rpx;
+  margin-bottom: 10rpx;
+}
+#reward image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 100rpx;
+  padding-top: 5px;
+} 
+#reward view{
+  font-size: 1rem;
+  height: 100%;
+  padding-right: 100rpx;
+  line-height: 80rpx;
+}
+.commentBtn{
+  text-align: center;
+  margin-top: 20rpx!important;
+  margin-bottom: 20rpx!important;
+}
+
+.weui-article{
+  padding-bottom: 0rpx !important;
+}
+.daShangBtn{
+  width: 40%;
+  height: 85rpx;
+  line-height: 80rpx;
+  border-radius: 15rpx;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.commentBtn{
+  width: 90%;
+  margin: 10rpx auto;
+}
+.page__desc1{
+  width: 30%;
+  text-align: right;
+  font-size: 26rpx;
+  color: #888888; 
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis; 
+  display: block;
+}
+.page__desc2{
+  width: 40%;
+  text-align: center;
+  font-size: 26rpx;
+  color: #888888;
+}
+.page__desc3{
+  width: 30%;
+  text-align: left;
+  font-size: 26rpx;
+  color: #888888;
+}
+.weui-article__p{
+  text-indent: 1rem;
+  font-size: 1rem;
+}
+.h1{
+  font-size: 1.3rem;
+  margin-bottom: 10rpx;
+}
+.image{
+  text-align: center;
+}
+.weui-cells__title{
+  padding-top: 10rpx;
+}
+.moneyBtn-item{
+  width: 120rpx;
+  margin: 8rpx;
+  font-size: 0.7rem !important;
+}
+.moneyBtn{
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  text-align: left;
+}
+.label{
+  width: 230rpx;
+}
+.zanAndDaShang{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  font-size: 13px;
+  color: #999;
+}
+.zanAndDaShang .zan{
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.zanAndDaShang .dashang{
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.zanAndDaShang .dashang .red{
+  color: red;
+}
+.touxiangRow{
+  text-align: center;
+}
+.imageView{
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  border: 1px solid #ccc;
+  margin: 5rpx;
+  border-radius: 40rpx;
+}
+.zanAndDaShang .dashang image{
+  display: inline-block;
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  margin-top: 1px;
+}
+

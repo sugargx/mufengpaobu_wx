@@ -1,0 +1,154 @@
+/* pages/uploading/upSuccess/upSuccess.wxss */
+Page{
+  background-color: #F8F8F8;
+}
+.image{
+  text-align: center;
+  position: relative;
+}
+.QRcode{
+  width: 180rpx;
+  height: 100rpx;
+  /* background-color: red; */
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  border-radius: 3rpx;
+}
+#QRImg{
+  width: 100rpx;
+  height:100rpx; 
+}
+.advname{
+  width: 180rpx;
+  font-size: 30rpx;
+  margin-top:-10rpx;
+  color:#fff;
+  text-shadow:2rpx 2rpx 5rpx #000;
+
+}
+.image image{
+  width: 750rpx;
+  height: 360rpx;
+}
+.text-box{
+   margin-top: -16rpx; 
+  padding:10rpx 8% 0rpx 8%;
+  /* background-color: #F8F8F8; */
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 224rpx;
+   background-color: #fff; 
+   border-bottom: 1rpx solid #e5e5e5;
+   border-top: 1rpx solid #e5e5e5;
+}
+.h1{
+  color: #353535;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;  
+  margin: 10rpx 0rpx;
+  letter-spacing: 4rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  /* background-color: #fff; */
+}
+.h2{
+  color: #353535;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;  
+  margin: 10rpx 0rpx;
+
+  /* background-color: #fff; */
+}
+.box2{
+  margin-top: 10rpx;
+}
+.text-box2{
+  margin-top: 20rpx;
+  padding:5rpx 8% 0rpx 8%;
+  /* background-color: #F8F8F8; */
+   box-sizing: border-box; 
+  width: 750rpx;
+  height: 148rpx;
+   background-color: #fff; 
+   border-bottom: 1rpx solid #e5e5e5;
+   border-top: 1rpx solid #e5e5e5;
+}
+.text{
+  font-size: 35rpx;  
+  font-family: Microsoft YaHei;
+  line-height: 140rpx;
+  text-align: center;
+}
+.kong{
+
+  width: 100%;
+  height: 30rpx;
+  background-color: white;
+}
+.p{
+  display: inline-block;
+  color: #353535;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 0 10rpx;
+  font-size: 30rpx;
+}
+.p-small{
+  display: inline-block;
+  color: #353535;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 25rpx;  
+}
+
+#share{
+  margin-top: 40rpx;
+  margin-bottom: 11rpx;
+  margin-left:27rpx; 
+  width: 315rpx;
+  float: left;
+}
+.upLoad{
+   margin-top: 40rpx;
+  margin-left:73rpx; 
+  width: 315rpx;
+  float: left;
+}
+.import{
+  font-weight: bold;
+}
+.bottom{
+  position: relative;
+  width: 100%;
+  height: 240rpx;
+}
+.footer{
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  margin-left: -180rpx;
+  width: 360rpx;
+   font-size:12px; 
+padding:0.34em;
+color:#999;
+/* font-size:14px; */
+text-align:center;
+
+}
+.juzhong{
+   padding-left: 52rpx;
+   padding-top: 30rpx;
+}
+.name1{
+  position: absolute;
+  top: 280rpx;
+  left: 10rpx;
+  font-size: 40rpx;
+  color: white;
+  z-index:999;
+ text-shadow:4rpx 4rpx 10rpx #000;
+}

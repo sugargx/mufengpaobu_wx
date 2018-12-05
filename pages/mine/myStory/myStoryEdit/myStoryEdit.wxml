@@ -1,0 +1,50 @@
+<!--userinfo.wxml-->
+<view class="head">记录我的跑步故事</view>
+ 
+
+<form report-submit="true" bindsubmit="formSubmit"> 
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label" >文章题目</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input bindblur='checkName' name="StoryName" value='{{storyName}}' class="weui-input" maxlength="20" placeholder='例如：跑步故事' type="text"/>
+    </view>
+  </view> 
+</view>
+
+<view class="weui-cells__title">文章内容</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea maxlength="1000" value="{{content}}" bindinput="change" class="weui-textarea" placeholder="至多一千字" style="height: 10rem" name="Content" />
+        <view class="weui-textarea-counter">{{num}}/1000</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">文章图片(最优长宽比5:2)</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+      <view class="pc row">
+        <block wx:for="{{images}}">
+            <image src="{{item}}" bindtap="delImage" data-url='{{item}}' class='image'></image>
+        </block>
+        <image src="../../../../images/plus.png" bindtap="chooseImage" id='choose'></image>
+      </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{AddGroupFlag}}" class="weui-cells__title">选择文章审核的团长:</view>
+  <view wx:if="{{AddGroupFlag}}" class="weui-cells weui-cells_after-title">
+    <radio-group bindchange="checkboxChange" name="group">
+    <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+        <radio  value="{{item.Id}}" checked='{{index==0}}'/>
+        <view class="weui-cell__bd">{{item.GroupName}}</view>
+      </label>
+    </radio-group>
+</view>
+<button type="primary" form-type="submit" class='updatedBtn'> 更新文章 </button>
+</form>

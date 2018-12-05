@@ -1,0 +1,48 @@
+<!-- <canvas class="graphCanvas" canvas-id="pieGraph"></canvas> -->
+<view class="sentence">运动情况统计</view>
+<view class="flex">
+  <view class="flex1" bindtap="flex1Tap">
+    
+    <button class=" sentence1" type="primary" size="mini" bindtap="lineGraph1tap">本周</button>
+    <button class=" sentence1" type="primary" size="mini" bindtap="lineGraph2tap">本月</button>
+    <button class=" sentence1" type="primary" size="mini" bindtap="lineGraph3tap">本年</button>
+    <view class="flex2"></view>
+  </view>
+
+  <view class="c1">
+    <view class="t1" wx:if="{{lineGraph1}}">
+      <view bindtap="weekup" class="up" wx:if="{{ind1}}">
+        <image class="leftimage" src="/images/left.png"></image>
+      </view>
+      <view bindtap="weekdown" class="down" wx:if="{{ind1!=indm1}}">
+        <image class="rightimage" src="/images/right.png"></image>
+      </view>
+      <view class="mounthTime">{{dat[0][ind1][0]}}-{{dat[0][ind1][1]}}</view>
+      <canvas class="graphCanvas" canvas-id="canvas"></canvas>
+    </view>
+    <view class="t2" wx:if="{{lineGraph2}}">
+      <view wx:if="{{ind2}}" bindtap="mounthup" class="up">
+        <image class="leftimage" src="/images/left.png"></image>
+      </view>
+      <view wx:if="{{ind2!=indm2}}" bindtap="mounthdown" class="down">
+        <image class="rightimage" src="/images/right.png"></image>
+      </view>
+      <view class="mounthTime">{{dat[2][ind2]}}</view>
+      <canvas class="graphCanvas" canvas-id="canvas1"></canvas>
+    </view>
+    <view class="t3" wx:if="{{lineGraph3}}">
+      <view wx:if="{{ind3}}" bindtap="yearup" class="up">
+        <image class="leftimage" src="/images/left.png"></image>
+      </view>
+      <view wx:if="{{ind3!=indm3}}" bindtap="yeardown" class="down">
+        <image class="rightimage" src="/images/right.png"></image>
+      </view>
+      <view class="mounthTime">{{dat[4][ind3]}}年共跑了{{dat[5][ind3]}}公里</view>
+      <canvas class="graphCanvas" canvas-id="canvas2"></canvas>
+    </view>
+  </view>
+
+</view>
+<view wx:if="{{lineGraph1}}" class='jieshao'>本周共跑了{{dat[7][ind1]}}公里</view>
+<view wx:if="{{lineGraph2}}" class='jieshao'>本月共跑了{{dat[8][ind2]}}公里</view>
+<view wx:if="{{lineGraph3}}" class='jieshao'>本年共跑了{{dat[5][ind3]}}公里</view>

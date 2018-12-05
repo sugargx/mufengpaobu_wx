@@ -1,0 +1,87 @@
+/* .flex-wrap{
+display: -webkit-flex;
+margin-bottom: 20rpx;
+margin-top: 14rpx;
+height: 50rpx; 
+} */
+/* .flex-wrap view{
+  margin: 10rpx;
+  font-family:"微软雅黑"; 
+} */
+.title{
+  display: flex;
+  flex-direction:row;
+  height: 70rpx;
+  background-color: #fff; 
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+}
+#nearGroup{
+flex: 26;
+font-size: 30rpx;
+margin-left: 20rpx;
+/* line-height: 100%; */
+line-height: 70rpx;
+}
+.weui-media-box__desc{
+word-break:break-all;
+}
+.weui-media-box__info__meta {
+  padding-right:0
+}
+#change{
+  flex: 40;
+  height: 40rpx;
+  text-align: right;
+  color:#ccc;
+  font-size: 30rpx;
+}
+button[size="mini"] {
+display:inline-block;
+line-height:2.3;
+font-size:12px;
+padding:0 0.5em;
+
+
+}
+#picture{
+float: left;
+height: 168rpx;
+margin-left:15rpx;
+margin-top:38rpx; 
+padding-right: 10rpx;
+width: 217.3rpx;
+
+}
+.change{
+  margin-top: 10rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+.qq{
+  float: right;
+  margin-top: 0rpx;
+  color:#999;
+font-size:13px;
+
+}
+.load_more{
+   background-color: #fff;
+  /* position: static; */
+  font: 12rpx;
+  color: #666; 
+}
+/* 去掉button边框*/
+.load_more::after{
+    border:none;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}

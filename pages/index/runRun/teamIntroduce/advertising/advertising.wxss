@@ -1,0 +1,40 @@
+.flex-wrap4 {  
+  width: 750rpx;
+display:  -webkit-flex;
+position: relative;
+font-size: 35rpx;
+z-index: 999;
+float: left;
+border-radius:25rpx; 
+background-color: white;
+ flex-direction: column;
+}
+#iswiper2{
+    height:300rpx;
+  width:100%;
+}
+#iswiper1{
+  height:300rpx;
+  width:100%;
+}
+#advTitle{
+
+  text-align: center;
+  font-size:40rpx; 
+}
+.int4{
+    flex: 0.3;
+  height: 10rpx;
+ background-color: #F8F8F8;
+ border-top:1rpx solid #eee;
+ border-bottom:1rpx solid #eee;
+}
+#advContent{
+  font-size: 30rpx;
+  letter-spacing: 1.4rpx;
+}
+#advQrurl image{
+  width: 170rpx;
+  height: 170rpx;
+  margin-left:260rpx;
+}
